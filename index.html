@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Number in Line 🔢</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>🔢 Number in Line</h1>
+  <p class="subtitle">Drag (or tap) each number to its correct spot on the line!</p>
+
+  <!-- Info bar -->
+  <div class="info-bar">
+    <span id="info-level">Level 1 – 1 to 5</span>
+    <span id="info-score">Score: 0</span>
+  </div>
+
+  <!-- Number line (drop targets / slots) -->
+  <section class="line-section" aria-label="Number line">
+    <p class="line-label">📍 Number Line – put the numbers in order</p>
+    <div class="number-line" id="number-line"></div>
+  </section>
+
+  <!-- Feedback message -->
+  <p class="feedback" id="feedback" aria-live="polite"></p>
+
+  <!-- Scrambled number tiles -->
+  <section class="scramble-section" aria-label="Number tiles">
+    <p class="scramble-label">👇 Your Numbers – drag them to the right spot!</p>
+    <div class="scramble-area" id="scramble-area"></div>
+  </section>
+
+  <!-- Controls -->
+  <div class="controls">
+    <button id="btn-new-game">🔄 New Game</button>
+    <button id="btn-hint">💡 Hint</button>
+  </div>
+
+  <!-- Win overlay -->
+  <div class="win-overlay" id="win-overlay" role="dialog" aria-modal="true" aria-label="You won!">
+    <div class="win-box">
+      <h2>🎉 Amazing!</h2>
+      <p>You put all the numbers in the right order!</p>
+      <p>Your score: <strong id="win-score">0</strong></p>
+      <div class="controls" style="margin-top:20px">
+        <button id="btn-next-level">➡️ Next Level</button>
+        <button id="btn-play-again">🔄 Play Again</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
