@@ -106,10 +106,8 @@ function attemptPlace(tileEl, slotEl) {
     slotEl.textContent = tileVal;
     slotEl.classList.add('correct');
     slotEl.style.color = '#fff';
-    slotEl.removeEventListener('dragover',  onSlotDragOver);
-    slotEl.removeEventListener('dragleave', onSlotDragLeave);
-    slotEl.removeEventListener('drop',      onSlotDrop);
-    slotEl.removeEventListener('click',     onSlotClick);
+    // The drag/drop and click handlers all guard on the 'correct' class,
+    // so no explicit removeEventListener is needed.
 
     tileEl.classList.add('placed');
 
@@ -144,7 +142,6 @@ function onTileDragStart(e) {
   draggingTile = e.currentTarget;
   draggingTile.classList.add('dragging');
   e.dataTransfer.effectAllowed = 'move';
-  e.dataTransfer.setData('text/plain', draggingTile.dataset.value);
 }
 
 function onTileDragEnd() {
